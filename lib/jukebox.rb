@@ -28,11 +28,12 @@ def run(songs)
   end
 end
 
-def help()
-  input = gets.chomp
-  if input == "help" || "exit"
-    puts ["help", "list", "play", "exit"]
-  end
+def help
+    puts "I accept the following commands:"
+    puts "- help : displays this help message"
+    puts "- list : displays a list of songs you can play"
+    puts "- play : lets you choose a song to play"
+    puts "- exit : exits this program"
 end
 
 def play(songs)
@@ -49,12 +50,10 @@ def play(songs)
 end
 
 def list(songs)
-  input = gets.chomp
-  puts songs.each_with_index.map {|song, i| ["#{i} #{song}"]}
+  puts songs.each_with_index.map {|song, i| "#{i+1}. #{song}"}
 end
 
-def exit_jukebox()
-  input = gets.chomp
+def exit_jukebox
   puts "Goodbye"
 end
 
